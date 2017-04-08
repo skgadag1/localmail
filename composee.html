@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Compose</title>
+<style>
+
+ h1 {
+	font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+h2 {
+	font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+	font-size: 18px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 300;
+	line-height: 26.4px;
+}
+
+
+.dropbtn {
+   background-color: #fff;
+    border: none;
+    color: black;
+    padding: 3px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 3px 40px;
+    outline:none;
+    border-radius: 0px;
+    box-shadow: 0 5px #fff;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 4px 4px 8px black;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #e0e0d1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #e0e0d1;
+}
+
+.button {
+    background-color: #fff;
+    border: none;
+    color: black;
+    padding: 3px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 3px 40px;
+    outline:none;
+    border-radius: 0px;
+    box-shadow: 0 5px #fff;
+    cursor: pointer;
+}
+.button:hover {background-color: #e0e0d1}
+#centerpoint {
+    top: 25%;
+    left: 25%;
+    position: absolute;
+}
+
+.attbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.sbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding:16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.Attachment {
+    position: relative;
+    display: inline-block;
+}
+.send {
+    position: relative;
+    display: inline-block;
+}
+.Attachment-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.Attachment-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.Attachment-content a:hover {background-color: #f1f1f1}
+.Attachment:hover .Attachment-content {
+    display: block;
+}
+.Attachment:hover .attbtn {
+    background-color: #3e8e41;
+}
+
+</style>
+</head>
+<body>
+<form method="post" action="comp.php">
+<div style="position: relative; padding-left:50px; padding-right:50px; background-color:#cc6600
+; padding-top: 5px; padding-bottom:10px; color:white; font-weight:500px;"><font size="16pt;">6errors</font></div>
+<table width="100%" border="0">
+<a href="Composee.html" class="button"><font style="text-shadow:2px 0px 2px black;"><center><h1>Compose</h1></center></font></a>
+  <div class="dropdown-content">
+    <a href="login.html"><h2>Sign Out</h2></a>
+    <font style="text-shadow:4px 4px 8px black;">
+    </font>
+</div>	</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<br>
+	<pre>
+	<input name="to" style="height:50px; width:1200px; align:left top:40%" type="email" maxlength="30" placeholder="To"/>
+</pre>
+<pre>
+	<input name="sub" type="text" style="height:50px; width:1200px; align:left; top:50%" maxlength="200" placeholder="Subject"/> <br><br>
+	<textarea name="body" style="height:300px; width:1200px; align:left; top:75%"  maxlength="25000"  placeholder="Body"></textarea><br>
+	<a href="inbox.html"><div class="send"><button class="sbtn">send</button></div></a> <div class="Attachment"><button class="attbtn">Attachment</button><div class="Attachment-content"><a href="#">Upload file</a><input type="file" name="windows file"/></div></div> <br><br> 
+	
+	
+<div style="position: absolute; padding-left:1060px; top:92.3%; padding-right:305px;  padding-bottom:8px; background-color:white;"><pre><font style="color:black;">&copy by the team 6errors</font></pre></div>
+</form>
+</body>
+</html>
