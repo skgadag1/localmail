@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>Login</title>
+</head>
+<style>
+.cancelbtn {
+    padding: 10px 20px;
+    background-color: #f44336;
+}
+.cancelbtn,.signupbtn {float:right;width:50%}
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(1,0,0,0.4); 
+    padding-bottom: 20px;
+}
+.modal-content {
+    background-color: white;
+    margin: 0% auto 1% auto;
+    border: none;
+    width: 70%; 
+	
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+	font-family: TimesNew Roman;
+	font-size: 12pt;
+}
+
+button:hover {
+	transition:0.3s;
+	box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.8);
+}
+
+button:active {
+    transform: translateY(5px);
+	}
+.container {
+    padding: 15px;
+	color: black;
+}
+div.pad{
+padding-left: 25%;
+padding-top: 10%;
+padding-right: 25%;
+}
+.pad1{
+padding-left: 2%;
+padding-bottom: 0%;
+padding-right: 2%;
+position: relative;
+}
+#rcps{
+padding-left:43%;
+color: #4CAF50;}
+
+#rcps:hover{
+color: blue;}
+
+</style>
+<body background="student-849825_1920.jpg">
+
+<div class="pad">
+<form action="login.php" method="post">
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" autofocus required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="pswd" required>
+	<a href="recover.html" title="Click here to recover your password" id="rcps">Forgot password?</a>
+    <button type="submit">Login</button>
+	<button onclick="document.getElementById('id01').style.display='block'"  type="button">Sign Up as Student</button>
+
+    <button type="button" onclick="document.getElementById('id02').style.display='block'" >Sign Up as Staff</button>
+  </div>
+</form>
+
+
+<div id="id01" class="modal">
+  <form class="modal-content" action="regstd.php" method="post">
+    <div class="container">
+      <label>Name</label>
+      <input type="text" placeholder="Enter your full name" name="name" required>
+	  
+	  <label>USN</label>
+      <input type="text" placeholder="Enter your USN" name="usn" required>
+	 <br/>
+	 <br/> 
+	  <label>Year</label><br/><br/>
+      <select style="width:100%; height:40px" name="yr" style="width:50px; height:30px">
+<option value="1" >1</option> 
+<option value="2" >2</option>
+<option value="3" >3</option>
+<option value="4" >4</option>
+</select>
+<br/>
+<br/>
+<label>Username</label>
+      <input type="text" placeholder="Enter a Username" name="uname" required>
+
+      <label>Password</label>
+      <input type="password" placeholder="Enter Password (6 to 15 characters)" name="pswd" required>
+
+      <label>Confirm Password</label>
+      <input type="password" placeholder="Re-enter Password" name="cpswd" required>
+	  <br/>Please Enter a <b>CONFIDENTIAL</b> fact about you<br/>
+	  It is used to recover your password<br/>
+	  For example: <br/>(In the fact field) <i><b>My favourite color</b></i><br/>
+	  (In the answer field) <i><b>White</b></i>
+	  	  <input type="text" placeholder="Fact" name="f1" required>
+	  <input type="text" placeholder="One Word answer for Fact (no space and max 15 characters allowed)" name="af1" maxlength="15" required>
+	  	  <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div id="id02" class="modal">
+  <form class="modal-content" action="regstf.php" method="post">
+    <div class="container">
+      <label>Name</label>
+      <input type="text" placeholder="Enter your full name" name="name" required>
+	  
+	  <label>SID</label>
+      <input type="text" placeholder="Enter your USN" name="sid" required>
+	 <br/>
+	 <br/> 
+	  <label>Branch</label><br/><br/>
+      <select style="width:100%; height:40px" name="br" style="width:50px; height:30px">
+<option value="CSE" >CSE</option> 
+<option value="CIVIL" >CIVIL</option>
+<option value="E&C" >E&C</option>
+<option value="EEE" >EEE</option>
+<option value="MECH" >MECH</option>
+</select>
+<br/>
+<br/>
+<label>Username</label>
+      <input type="text" placeholder="Enter a Username" name="uname" required>
+
+      <label>Password</label>
+      <input type="password" placeholder="Enter Password (6 to 15 characters)" name="pswd" required>
+
+      <label>Confirm Password</label>
+      <input type="password" placeholder="Re-enter Password" name="cpswd" required>
+      <br/>Please Enter a <b>CONFIDENTIAL</b> fact about you<br/>
+	  It is used to recover your password<br/>
+	  For example: <br/>(In the fact field) <i><b>My favourite color</b></i><br/>
+	  (In the answer field) <i><b>White</b></i>
+	  	  <input type="text" placeholder="Fact" name="f1" required>
+	  <input type="text" placeholder="One Word answer for Fact (no space and max 15 characters allowed)" name="af1" maxlength="15" required>
+	  	  <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+var modal = document.getElementById('id01');
+var modal1 = document.getElementById('id02');
+window.onclick = function(event) {
+    if (event.target == modal) 
+        modal.style.display = "none";
+    else if(event.target==modal1)
+	modal1.style.display = "none";
+}
+</script>
+
+</body>
+
+</html>

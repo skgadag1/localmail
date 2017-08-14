@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head><title>C Test</title></head>
+<style>
+input[type=text], textarea{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	font-size: 12px;
+	font-family: Comic Sans MS;
+}
+.pad{
+padding-left: 400px;
+padding-top: 10px;
+font-size:20px;}
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #3e8e41;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {
+opacity:0.8;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+#btn{
+position:absolute;
+padding-top:1px;
+padding-left:570px;}
+</style>
+<body bgcolor="#4CAF50">
+<div class="pad">
+<form method="post" action="csf.php">
+<font style="color: red">UPLOAD FAILED!<br/></font>
+Question<br/>
+<textarea name="que" placeholder="Enter your question here" rows="10" cols="100"></textarea><br/>
+Answer<br/>
+<input type="text" name="ans" placeholder="Enter the correct answer"/><br/>
+Please type-in other 3 options for the above quetion<br/>
+<input type="text" name="o1" placeholder="Option 1"/><br/>
+<input type="text" name="o2" placeholder="Option 2"/><br/>
+<input type="text" name="o3" placeholder="Option 3"/>
+</div>
+<div id="btn">
+<button class="button" type="submit">Upload</button>
+</div>
+</form>
+</body>
+</html>

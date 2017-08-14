@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  max-width: 340px;
+  margin: auto;
+  text-align: center;
+  font-family: Comic Sans MS;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<?php
+$con=mysqli_connect("localhost", "root", "", "onpro");
+if(!$con)
+{
+	die("Connection faild: ".mysqli_connect_error());
+}
+$q1="SELECT `uname` FROM `logged`";
+$res=mysqli_query($con, $q1);
+if (mysqli_num_rows($res) > 0) 
+{
+   $row = mysqli_fetch_assoc($res); 
+   $r=implode("", $row);
+   $q2="SELECT `name` FROM `student` WHERE `usrname`='".$r."'";
+   $ses=$r;
+   if($_SESSION['usr']!=$ses)
+		 header('Location: index.html');
+   $res1=mysqli_query($con, $q2);
+   if(mysqli_num_rows($res1) > 0)
+   {
+	   $nm=mysqli_fetch_assoc($res1);
+		$nam=$nm["name"];
+		$usn=$nm["usn"];
+		$yr=$nm["year"];
+		$br=explode("", $nm["usn"]);
+		print_r($br);
+   }
+}
+
+echo '<body>
+<h2 style="text-align:center">Student Profile Card</h2>
+<div class="card">
+  <img src="usr.png" alt="John" style="width:100%">
+  <div class="container">
+    <h1>'.$nam'.</h1>
+    <p class="title">CEO & Founder, Example</p>
+    <p>Harvard University</p>
+    <div style="margin: 24px 0;">
+      <a href="#"><i class="fa fa-dribbble"></i></a> 
+      <a href="#"><i class="fa fa-twitter"></i></a>  
+      <a href="#"><i class="fa fa-linkedin"></i></a>  
+      <a href="#"><i class="fa fa-facebook"></i></a> 
+   </div>
+   <p><button>Contact</button></p>
+  </div>
+</div>
+
+</body>
+</html>
